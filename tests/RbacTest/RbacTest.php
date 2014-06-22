@@ -50,19 +50,6 @@ class RbacTest extends TestCase
     /**
      * @covers Rbac\Rbac::isGranted
      */
-    public function testCastPermissionToString()
-    {
-        $rbac = new Rbac;
-
-        $permission = $this->getMock('Rbac\Permission\PermissionInterface');
-        $permission->expects($this->once())->method('__toString')->will($this->returnValue('permission'));
-
-        $rbac->isGranted([], $permission);
-    }
-
-    /**
-     * @covers Rbac\Rbac::isGranted
-     */
     public function testInjectSingleRoleToArray()
     {
         $role = new Role('Foo');
